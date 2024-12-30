@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import CardTaskPending from './CardTaskPending';
 import CardTaskCompleted from './CardTaskCompleted';
 
-const ListTasks = ({ search }) => {
+const ListTasks = ({ search ,setDetailsTask,setUpdateTask}) => {
 
   const tasks = useSelector(state => state.tasks)
   //const tasks = []
@@ -30,7 +30,7 @@ const ListTasks = ({ search }) => {
                 if (completed) {
                   return <CardTaskCompleted key={_id} _id={_id} title={title} description={description} createdAt={date} />
                 } else {
-                  return <CardTaskPending key={_id} _id={_id} title={title} description={description} createdAt={date} />
+                  return <CardTaskPending key={_id} _id={_id} title={title} description={description} createdAt={date} setDetailsTask={setDetailsTask} setUpdateTask={setUpdateTask}  />
                 }
               })
           }

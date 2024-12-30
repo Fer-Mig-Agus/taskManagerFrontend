@@ -20,11 +20,12 @@ const CreateTask = () => {
     const createTask = async (sendTask) => {
         try {
           const { data } = await axios.post(`${VITE_URL_API}/api/tasks`,sendTask);
-          console.log(data)
+
           setNewTask({
             title:'',
             description:''
         })
+        window.location.reload();
 
         displaySuccessMessage('Task successfully added');
         } catch (error) {
