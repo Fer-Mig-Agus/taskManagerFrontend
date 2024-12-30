@@ -2,21 +2,16 @@ import { createSlice } from "@reduxjs/toolkit";
 const { VITE_URL_API } = import.meta.env;
 
 
-export const productsSlice = createSlice({
+export const tasksSlice = createSlice({
     name: "tasks",
-    initialState: {
-        allProducts: [],
-        productsByCategory: [],
-    },
+    initialState:[],
     reducers: {
-        getAllProducts: (state,action) => {
-            state.allProducts = action.payload
+        getAllTasks: (state,action) => {
+            return action.payload
         },
-        getAllProductByCategory: (state, action) => state.productsByCategory = action.payload,
-
     }
 });
 
-export const { getAllProducts, getAllProductByCategory } = productsSlice.actions;
+export const { getAllTasks } = tasksSlice.actions;
 
-export default productsSlice.reducer;
+export default tasksSlice.reducer;
